@@ -5,6 +5,7 @@ body, .bg-dark{
 .navbar{
 position: relative;
 z-index: 1000;
+height: 60px;
 }
 
 .navbar .form-control{
@@ -152,6 +153,7 @@ flex-grow:  initial !important;
 
 .navbar ul.nav li{
   padding: 0;
+
 }
 
 .navbar ul.nav{
@@ -164,3 +166,10 @@ flex-grow:  initial !important;
 }
 
 }
+
+
+
+
+
+/* =================== */
+

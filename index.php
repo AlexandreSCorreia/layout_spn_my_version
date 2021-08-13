@@ -13,6 +13,120 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <!-- ===== CSS ===== -->
   <link rel="stylesheet" href="assets/css/style.css" />
+
+
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+.carousel-container {
+  width: 1280px;
+  margin: 0 auto;
+  min-height: 200px;
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .carousel-container {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .carousel-container {
+    width: 85%;
+  }
+}
+
+
+.carousel-container .carousel-inner {
+  overflow: hidden;
+}
+
+.carousel-container .track {
+  display: inline-flex;
+  transition: transform 0.5s;
+  position: relative;
+}
+/*
+.carousel-container .card-container {
+  width: 259px;
+  flex-shrink: 0;
+  height: 250px;
+  padding-right: 15px;
+  box-sizing: border-box;
+}*/
+.carousel-container .card-container .card {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 10px;
+  /*display: flex;
+  flex-direction: row;*/
+}
+.carousel-container{
+  position: relative;
+}
+
+.card {
+
+  flex-direction: row;
+}
+.nav button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.nav .prev {
+  left: -15px;
+  display: none;
+}
+.nav .prev.show {
+  display: block;
+}
+.nav .next {
+  right: -15px;
+}
+.nav .next.hide {
+  display: none;
+}
+/*
+.card > * {
+  flex: 1;
+}
+/*.card .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}*/
+/*.card .info {
+  flex-basis: 40px;
+  background: #333;
+  color: #fff;
+  flex-grow: 0;
+  padding: 10px;
+  box-sizing: border-box;
+}*/
+
+
+.car{
+  position: relative;
+
+}
+
+.car .countCar{
+  position: absolute;
+  top: -8px;
+  right: -4px;
+  border-radius: 50%;
+}
+
+  </style>
 </head>
 
 <body>
@@ -42,8 +156,14 @@
 
 
       <form action="" class="form-inline">
-        <input type="search" name="pesquisar" id="pesquisar" placeholder="Busca" class="form-control">
+        <input type="search" name="pesquisar" id="pesquisar" placeholder="Estou buscando..." class="form-control">
       </form>
+
+      <div class="car">
+        <i class="fas fa-shopping-cart text-white px-2" style="font-size:22px;"></i>
+        <span class="countCar badge badge-warning">99</span>
+      </div>
+     
 
       <div class="media text-white p-2 d-none d-lg-flex">
         <img src="assets/images/perfil.jpg" alt="Avatar" class="mr-2">
@@ -58,10 +178,10 @@
         <li class="media media-avatar">
           <img src="assets/images/perfil.jpg" alt="Avatar" class="mr-2">
           <div class="media-body">
-            <p class="h6 m-0">
-              AlexandreSCorreia
+            <p class="h6 m-0 font-weight-bold">
+              Olá, Entre
             </p>
-            <small>Logout</small>
+            <small>ou cadastre-se</small>
           </div>
         </li>
 
@@ -84,7 +204,7 @@
 
   <!--CONTENT-->
 
-  <main class="main_content">
+  <main>
     <?php
     $file = filter_input(INPUT_GET, "file", FILTER_SANITIZE_SPECIAL_CHARS);
     if (empty($file)) {
@@ -96,6 +216,7 @@
     }
     ?>
   </main>
+
 
   <!--FOOTER-->
   <footer class="row no-gutters p-4">
